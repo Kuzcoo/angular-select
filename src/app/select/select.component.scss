@@ -1,0 +1,46 @@
+.select {
+  width: 300px;
+  border: 1px solid #dedede;
+  color: #333;
+
+  &.is-open &__list {
+    display: block;
+  }
+
+  &__list {
+    display: none;
+    width: 100%;
+    list-style: none;
+  }
+
+  &__toggle {
+    padding: 0.5em;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dedede;
+    font-size: 1rem;
+    text-align: left;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: 1px solid blue;
+    }
+  }
+
+  &__option {
+    padding: 0.5em;
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+    cursor: pointer;
+
+    &:last-child {
+      border: none;
+    }
+
+    &.is-focus,
+    &:hover {
+      background-color: #dedede;
+    }
+  }
+}

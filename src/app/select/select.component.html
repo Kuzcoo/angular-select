@@ -1,0 +1,29 @@
+<div 
+  class='select'
+  [class.is-open]="isOpen"
+  (keydown)="handleKey($event)">
+  <button 
+    aria-owns='select-listbox'
+    aria-controls='select-listbox'
+    [attr.aria-expanded]="isOpen"
+    [attr.aria-activedescendant]="getActiveOptionId()"
+    class='select__toggle'
+    (click)="toggleSelect($event)"
+    (blur)="closeSelect()">
+    {{selectedValue}}
+  </button>
+  <ul 
+    role='listbox'
+    id='select-listbox'
+    class='select__list'>
+    <li
+      *ngFor="let option of options"
+      role='option'
+      [id]="setOptionDomId(option.id)"
+      class='select__option'
+      [class.is-focus]="option.id === focusIndex"
+      (mousedown)="handleOptionClick($event, option.name)">
+      {{ option.name }}
+    </li>
+  </ul>
+</div>

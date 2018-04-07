@@ -1,0 +1,10 @@
+<form (submit)="handleSubmit($event, fruitSelect.selectedValue)">
+  <h2>Angular Select Poc</h2>
+
+  <app-select 
+    #fruitSelect 
+    [options]="fruits">
+  </app-select>
+
+  <input type="submit" value="Submit!">
+</form>
